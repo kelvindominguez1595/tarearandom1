@@ -4,13 +4,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
   <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
   <ion-searchbar></ion-searchbar>
 
-  <div class="ion-padding">
+
     <h1>Components Checkbox</h1>
     <ion-list>
       <ion-item *ngFor="let color of colors">
@@ -41,5 +41,13 @@
         Here's a small text description for the card content. Nothing more, nothing less.
       </ion-card-content>
     </ion-card>
-  </div>
+
+
+  <ion-list>
+    <ion-item>
+      <ion-select placeholder="Select fruit" >
+        <ion-select-option *ngFor="let color of colors" value="{{color.name}}">{{color.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
 </ion-content>
