@@ -26,12 +26,17 @@ export class ComponentsPage implements OnInit {
 
 
   checkEvent(uuid:number) {
-    console.log("me siento ", uuid);
-
     this.colors.map(obj => {
       if(obj.uuid === uuid){obj.isCheck = true;}
       return obj;
     });
   }
+
+  handleRefresh(event:any) {
+    setTimeout(() => {
+      // Any calls to load data go here
+      event.target.complete();
+    }, 2000);
+  };
 
 }
