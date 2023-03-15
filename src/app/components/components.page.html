@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Components</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <h1>Components Checkbox</h1>
+    <ion-item>
+      <ion-checkbox slot="start"></ion-checkbox>
+      <ion-label>I agree to the terms and conditions</ion-label>
+    </ion-item>
+    <ion-list>
+      <ion-item *ngFor="let color of colors">
+        <ion-checkbox slot="end" [(ngModel)]="color.isCheck" (ionChange)="checkEvent(color.uuid)" ></ion-checkbox>
+        <ion-label>{{color.name}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
